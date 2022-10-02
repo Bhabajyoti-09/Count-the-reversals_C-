@@ -1,0 +1,19 @@
+
+
+int countRev (string s)
+{
+    if(s.size()%2) return -1;
+    
+    int cl=0; int cr=0;
+    
+    for(char c: s){
+        if(c=='{') cl++;
+        
+        else{
+            if(cl) cl--;
+            else cr++;
+        }
+    }
+    
+    return (cl/2)+(cl%2)+(cr/2)+(cr%2);
+}
